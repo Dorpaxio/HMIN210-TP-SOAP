@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Sm3E/dWFtpdhsj72Tuz2gtXMxtCQw0FhJ21aB00pv2UPe0Ur4x5ZM3q1tlMwTPHtgEyBn1iSn7nNPMORrfidkw==",
+  "success": true,
+  "projectFilePath": "D:\\Visual Studio\\ProjetHotel\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dorpa\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

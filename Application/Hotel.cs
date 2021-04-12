@@ -19,6 +19,7 @@ namespace ProjetHotel
         private double longitude { get; set; }
 
         public List<Room> rooms { get; }
+        public List<Partner> partners { get; }
 
         public Hotel(string name, int rating, int streetNumber, string street, string city, string country, double latitude, double longitude) :
             this(name, rating, streetNumber, street, null, city, country, latitude, longitude)
