@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Client.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Client_AccorHotelService_AccorHotelService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44365/WebServices/AccorHotelService.asmx</Value>
+    </Setting>
+    <Setting Name="Client_AccorHotel_AccorHotelService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44365/WebServices/AccorHotelService.asmx</Value>
+    </Setting>
+    <Setting Name="Client_BBHotelService_BBHotelService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44365/WebServices/BBHotelService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

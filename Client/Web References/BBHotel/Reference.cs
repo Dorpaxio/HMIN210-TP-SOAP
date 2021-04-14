@@ -35,6 +35,8 @@ namespace Client.BBHotel {
         
         private System.Threading.SendOrPostCallback GetRoomsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback BookRoomOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -81,6 +83,9 @@ namespace Client.BBHotel {
         
         /// <remarks/>
         public event GetRoomsCompletedEventHandler GetRoomsCompleted;
+        
+        /// <remarks/>
+        public event BookRoomCompletedEventHandler BookRoomCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Init", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -175,6 +180,37 @@ namespace Client.BBHotel {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/BookRoom", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool BookRoom(string token, string infos) {
+            object[] results = this.Invoke("BookRoom", new object[] {
+                        token,
+                        infos});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void BookRoomAsync(string token, string infos) {
+            this.BookRoomAsync(token, infos, null);
+        }
+        
+        /// <remarks/>
+        public void BookRoomAsync(string token, string infos, object userState) {
+            if ((this.BookRoomOperationCompleted == null)) {
+                this.BookRoomOperationCompleted = new System.Threading.SendOrPostCallback(this.OnBookRoomOperationCompleted);
+            }
+            this.InvokeAsync("BookRoom", new object[] {
+                        token,
+                        infos}, this.BookRoomOperationCompleted, userState);
+        }
+        
+        private void OnBookRoomOperationCompleted(object arg) {
+            if ((this.BookRoomCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.BookRoomCompleted(this, new BookRoomCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -245,6 +281,32 @@ namespace Client.BBHotel {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void BookRoomCompletedEventHandler(object sender, BookRoomCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BookRoomCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal BookRoomCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }
